@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation de lettre</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Automatic RSS Feeds</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/rss-parser/dist/rss-parser.min.js"></script>
+    
+  </head>
+    <style>
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+div,
+table,
+th,
+td {
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  background-color: #016633;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+      .navbar {
+        background-color: #333; /* Dark gray background color */
+        color: #fff; /* White text color */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        text-decoration: none;
+        margin-right: 10px;
+        padding: 10px;
+      }
+
+      h1 {
+        font-weight: bold; /* Make the title bold */
+        margin-top: 30px;
+      }
+
+      .container {
+        width: 80%;
+        max-width: 800px;
+        margin-top: 20px;
+        background-color: #fff; /* White background color */
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+
+      table {
+        width: 100%;
+      }
+
+      th {
+        text-align: left;
+      }
+
+      .category-title {
+        font-weight: bold; /* Make the category title bold */
+        margin: 10px 0; /* Add some margin below the category title */
+        color: #000; /* Black text color for the category title */
+      }
+
+      .article-title {
+        color: #0a6d00; /* Dark green color for the article title */
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .article-title:hover {
+        color: #076a00; /* Darker green color on hover */
+      }
+
+      .image-container {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+
+      .image-container img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .footer {
+        background-color: #333; /* Dark gray background color */
+        color: #fff; /* White text color */
+        padding: 10px;
+        text-align: center;
+        margin-top: 20px; /* Add margin to the top of the footer */
+        width: 100%;
+        transition: transform 0.3s;
+    }
+
+    .footer:hover {
+        transform: scale(1.1);
+    }
+
+      .footer a {
+        color: #fff; /* White text color for footer links */
+        text-decoration: none;
+      }
+
+      .project-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+
+      .project-container h2 {
+        font-weight: bold;
+      }
+
+      .project-image {
+        max-width: 200px;
+        height: auto;
+      }
+
+    .left-image {
+    position: absolute;
+    top: 20px; /* Adjust the vertical position as needed */
+    width: 100px; /* Adjust the width of the images */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .right-image {
+    position: absolute;
+    top: 20px; /* Adjust the vertical position as needed */
+    width: 100px; /* Adjust the width of the images */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .left-image {
+    left: 20px; /* Adjust the horizontal position as needed */
+  }
+
+  .right-image {
+    right: 20px; /* Adjust the horizontal position as needed */
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  td {
+    border: 1px solid black;
+    padding: 5px;
+  }
+
+  /* Default styles for all screens */
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Styles for wide screens (min-width: 1100px) */
+  @media (min-width: 1100px) {
+    body {
+      max-width: 1100px;
+      margin: 0 auto; /* Center the content horizontally */
+    }
+  }
+
+  /* Styles for narrow screens (max-width: 960px) */
+  @media (max-width: 960px) {
+    body {
+      max-width: 960px;
+      margin: 0 auto; /* Center the content horizontally */
+    }
+  }
+
+  body {
+    font-family: "Times New Roman", Times, serif;
+  }
+
+
+  .container1 {
+  background-color: rgb(67, 131, 1);
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+  transition: transform 0.3s;
+    }
+
+    .container1:hover {
+        transform: scale(1.1);
+    }
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span:after {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: opacity 0.5s; /* Add transition for smooth fade-in effect */
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+
+ul#itemList1 {
+      color: white !important;
+    }
+
+
+.section {
+      margin-top: 20px;
+      border-top: 5px solid #fff;
+      padding-top: 10px;
+    }
+
+h3 {
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+h4 {
+  color: #fff;
+  font-size: 50px;
+}
+
+.container2 {
+        background-color: white;
+        padding: 10px;
+        text-align: center;
+        margin-top: 20px;
+        width: 100%;
+        border: 2px solid #016633;
+        border-style: solid; /* Ajoutez cette ligne pour spécifier le style de bordure */
+        transition: transform 0.3s;
+      }
+
+      .container2:hover {
+        transform: scale(1.1);
+      }
+
+.container3 {
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+  border: 2px solid #063D5D;
+
+  transition: transform 0.3s;
+    }
+
+    .container3:hover {
+        transform: scale(1.1);
+    }
+
+  .container4 {
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+  border: 2px solid #3EBBAD;
+
+  transition: transform 0.3s;
+    }
+
+    .container4:hover {
+        transform: scale(1.1);
+    }
+
+  .container5 {
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+  border: 2px solid #0C704B;
+
+  transition: transform 0.3s;
+    }
+
+    .container5:hover {
+        transform: scale(1.1);
+    }
+
+
+
+
+  .autres-projets {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+  }
+
+  .projects-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.project {
+  flex: 1;
+  text-align: center;
+}
+
+.image-container1,
+.image-container2 {
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.image-container1 {
+  left: 10%;
+}
+
+.image-container2 {
+  right: 0;
+}
+
+.image-container1:hover .left-image,
+.image-container2:hover .right-image {
+  position: static;
+}
+
+h5 {
+  
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  color: black;
+}
+
+h6 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30px;
+  color: #016633;
+}
+
+table {
+            transition: transform 0.3s ease;
+        }
+
+
+</style>
+
+
+</style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" style="color: #fff;">Accueil</a>
+        <a href="#" style="color: #fff;">À propos</a>
+        <a href="#" style="color: #fff;">Contact</a>
+    </div>
+    
+    <div class="container1 section">
+        <h4>Présentation du projet</h4>
+        <a href="https://eveille.hypotheses.org/" target="_blank" class="button">
+          <span></span>
+
+          <div class="grid">
+            <div class="letter-anim">
+              <span data-letter="E">E</span>
+            </div>
+            <div class="letter-anim">
+              <span data-letter="V">V</span>
+            </div>
+            <div class="letter-anim">
+              <span data-letter="E">E</span>
+            </div>
+            <div class="letter-anim">
+              <span data-letter="I">I</span>
+            </div>
+            <div class="letter-anim">
+              <span data-letter="L">L</span>
+            </div>
+            <div class="letter-anim">
+              <span data-letter="L">L</span>
+            </div>
+            <div class="letter-anim">
+              <span data-letter="E">E</span>
+            </div>
+          </div>
+          
+          
+        </a>
+
+    <h1 class="project-title"></h1>
+    <div class="project-description">
+        <p>
+            Le projet EVEille (Exploration et Valorisation Electroniques des corpus En SHS) a pour objectif premier d’accompagner les jeunes chercheur.e.s ou les chercheur.e.s confirmé.e.s qui souhaitent s’initier aux Humanités au sein de pratiques de recherche nouvelles ou engagées de longue date.
+        </p>
+        <p>
+            Il entend développer progressivement une réflexion collective critique sur les enjeux épistémologiques du virage du “tout-numérique” à l’heure actuelle, dans le monde académique notamment, afin de faire de l’outillage un réel lieu de réflexion sur les pratiques de la recherche, les visées et les orientations implicites introduites par le recours au traitement numérique des corpus.
+        </p>
+    </div>
+</body>
+    </div>
+    <div class="container">
+        <h6>Les flux RSS du projet EVEille</h6>
+        <style>
+            h1 {
+                color: black;
+            }
+        </style>
+
+        <div class="image-container">
+            <img src="https://i.ibb.co/x2XCjyW/Capture-d-cran-2023-06-06-140520.png" alt="Image">
+        </div>
+
+        <div style="font-family: 'Times New Roman', Times, serif;">
+          <h5 style="margin-bottom: 40px; font-size: 16px; color: black;">La barre de recherche permet de chercher des mots clés dans les flux RSS proposés par le projet Eveille.</h5>
+        </div>
+        
+        
+        <body>
+          <input type="text" id="keywordInput" placeholder="Enter a keyword">
+          <button onclick="searchArticles()">Recherche</button>
+      
+          <div id="searchResults" class="container2">
+            <h5 style="margin-bottom: 40px; font-size: 16px; color: black;">Résultats de la recherche</h5>
+            <ul id="resultsList"></ul>
+          </div>
+          
+          <div style="font-family: 'Times New Roman', Times, serif; margin-top: 20px;">
+            <h5 style="margin-bottom: 40px; font-size: 16px;">Les différents flux RSS du projet EVEille avec leurs catégories.</h5>
+          </div>
+          
+        
+          <div class="container5">
+            <table>
+              <tr>
+                <th>Catégorie</th>
+                <th>Articles</th>
+              </tr>
+              <tr>
+                <td class="category-title">Jardin de la poésie</td>
+                <td id="rssArticles1"></td>
+              </tr>
+              <tr>
+                <td class="category-title">La roue à livres</td>
+                <td id="rssArticles2"></td>
+              </tr>
+              <tr>
+                <td class="category-title">Olio</td>
+                <td id="rssArticles3"></td>
+              </tr>
+              <tr>
+                <td class="category-title">Estrades</td>
+                <td id="rssArticles4"></td>
+              </tr>
+            </table>
+          </div>
+          
+            
+        </table>
+        
+        <div style="font-family: 'Times New Roman', Times, serif;">
+          <h5 style="margin-bottom: 20px; font-size: 16px;; margin-top: 10px">Sélection des flux RSS proposé par l'équipe du projet EVEille (alimenté par une collection Zotero)</h5>
+        </div>
+
+        <head>
+          <title>Zotero Collection</title>
+        </head>
+        <body>
+          
+            <div class="section">
+              <div class="container4">
+              <h3>Flux proposé par l'équipe du projet EVEille</h3>
+              <ul id="itemList1"></ul>
+            </div>
+          </div>
+        </body>
+
+    <div class="section">
+
+      <div style="font-family: 'Times New Roman', Times, serif;">
+        <h5 style="margin-bottom: 20px; font-size: 16px;; margin-top: 10px">L'équipe EVEille propose aussi des flux RSS triés par mots-clés.</h5>
+      </div>
+    
+      <div class="container3">
+
+
+        <table>
+            <tr>
+                <td>
+                    <h3>Annotation</h3>
+                    <ul id="itemList2"></ul>
+                </td>
+                <td class="even">
+                    <h3>Corpus</h3>
+                    <ul id="itemList4"></ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="even">
+                    <h3>Histoire</h3>
+                    <ul id="itemList3"></ul>
+                </td>
+                <td>
+                    <h3>Sociologie</h3>
+                    <ul id="itemList5"></ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    
+    <div class="footer centered-text">
+      <b style="font-family: 'Times New Roman', Times, serif; font-size: 20px;">Autres projets</b>
+
+        <div class="project-description">
+            <div class="project-container">
+                <div class="project">
+                    <h2></h2>
+                    <a href="https://digithum.huma-num.fr/" target="_blank">
+                        <img class="project-image" src="https://i.ibb.co/VS4Qprj/Capture-d-cran-2023-06-06-213348.png" alt="Projet Digit_Hum">
+                    </a>
+                    <a href="https://digithum.huma-num.fr/" target="_blank" class="button">
+                        <span>Projet Digit_Hum</span>
+                    </a>
+                </div>
+                <div class="project">
+                    <h2></h2>
+                    <a href="https://popineaumaxime-les.curve.space/myst/presentation" target="_blank">
+                        <img class="project-image" src="https://i.ibb.co/G3YsMsH/Capture-d-cran-2023-06-06-213528.png" alt="Projet Curvenote">
+                    </a>
+                    <a href="https://popineaumaxime-les.curve.space/myst/presentation" target="_blank" class="button">
+                        <span>Projet Curvenote</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <a href="https://i.ibb.co/XprzQTH/images.jpg">Mentions légales</a> | © Projet EVEille
+    </div>
+    
+
+    <div class="image-container1">
+      <img src="tilleul-arbre.jpg" alt="Image">
+    </div>
+    
+    <div class="image-container2">
+      <img src="test.png" alt="Image">
+    </div>
+  
+
+<script>
+         const parser = new RSSParser(); // Initialize the RSS Parser
+
+function generateRSS() {
+    const feedData = [
+        {
+            category: 'Jardin de la poésie',
+            url: 'https://versunjardin.hypotheses.org/feed'
+        },
+        {
+            category: 'La roue à livres',
+            url: 'https://rouealivres.hypotheses.org/feed'
+        },
+        {
+            category: 'Olio',
+            url: 'https://olio.hypotheses.org/feed'
+        },
+        {
+            category: 'Estrades',
+            url: 'https://estrades.hypotheses.org/feed'
+        }
+    ];
+
+    const rssArticles1 = document.getElementById('rssArticles1');
+    const rssArticles2 = document.getElementById('rssArticles2');
+    const rssArticles3 = document.getElementById('rssArticles3');
+    const rssArticles4 = document.getElementById('rssArticles4');
+
+    const fetchAndProcess = (category, url, articlesContainer) => {
+        parser.parseURL(url, (err, feed) => {
+            if (err) {
+                articlesContainer.innerHTML = 'Erreur lors du chargement du flux RSS.';
+                return;
+            }
+
+            const items = feed.items;
+
+            if (items.length > 0) {
+                const rssItems = items.map(item => {
+                    const itemTitle = item.title;
+                    const itemLink = item.link;
+                    return `
+                        <li>
+                            <a href="${itemLink}" class="article-title">${itemTitle}</a>
+                        </li>
+                    `;
+                }).join('');
+
+                articlesContainer.innerHTML = `<ul>${rssItems}</ul>`;
+            } else {
+                articlesContainer.innerHTML = 'Aucun article trouvé.';
+            }
+        });
+    };
+
+    feedData.forEach(feed => {
+        switch (feed.category) {
+            case 'Jardin de la poésie':
+                fetchAndProcess(feed.category, feed.url, rssArticles1);
+                break;
+            case 'La roue à livres':
+                fetchAndProcess(feed.category, feed.url, rssArticles2);
+                break;
+            case 'Olio':
+                fetchAndProcess(feed.category, feed.url, rssArticles3);
+                break;
+            case 'Estrades':
+                fetchAndProcess(feed.category, feed.url, rssArticles4);
+                break;
+        }
+    });
+}
+
+generateRSS();
+
+function searchArticles() {
+    const keyword = document.getElementById('keywordInput').value.toLowerCase();
+    const searchResults = [];
+
+    const processSearchResults = (category, articlesContainer) => {
+        const articles = articlesContainer.getElementsByTagName('li');
+        for (let i = 0; i < articles.length; i++) {
+            const article = articles[i];
+            const articleTitle = article.getElementsByTagName('a')[0].textContent.toLowerCase();
+            const articleLink = article.getElementsByTagName('a')[0].getAttribute('href');
+            if (articleTitle.includes(keyword)) {
+                searchResults.push({
+                    category: category,
+                    title: articleTitle,
+                    link: articleLink
+                });
+            }
+        }
+    };
+
+    const rssArticlesContainers = [
+        { category: 'Jardin de la poésie', container: rssArticles1 },
+        { category: 'La roue à livres', container: rssArticles2 },
+        { category: 'Olio', container: rssArticles3 },
+        { category: 'Estrades', container: rssArticles4 }
+    ];
+
+    rssArticlesContainers.forEach(rssContainer => {
+        processSearchResults(rssContainer.category, rssContainer.container);
+    });
+
+    displaySearchResults(searchResults);
+}
+
+function displaySearchResults(results) {
+    const searchResultsContainer = document.getElementById('searchResults');
+    let searchResultsHTML = '';
+
+    if (results.length > 0) {
+        searchResultsHTML += '<ul>';
+        results.forEach(result => {
+            searchResultsHTML += `
+                <li>
+                    <span class="category">${result.category}</span>:
+                    <a href="${result.link}" class="article-title">${result.title}</a>
+                </li>
+            `;
+        });
+        searchResultsHTML += '</ul>';
+    } else {
+        searchResultsHTML = 'Aucun résultat trouvé.';
+    }
+
+    searchResultsContainer.innerHTML = searchResultsHTML;
+
+}
+function fetchZoteroCollection(collectionUrl, targetElementId) {
+            fetch(collectionUrl)
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(item => {
+                        var title = item.data.title;
+                        var url = item.data.url;
+
+                        var listItem = document.createElement('li');
+                        listItem.innerHTML = '<a href="' + url + '">' + title + '</a>';
+
+                        document.getElementById(targetElementId).appendChild(listItem);
+                    });
+                })
+                .catch(error => console.log(error));
+        }
+
+        var apiKey = 'yQraJQogHA89BHu3VJBKXLha';  // Replace with your Zotero API key
+
+        var collectionUrl1 = 'https://api.zotero.org/users/9668586/collections/8PHW6BAG/items/top?v=3&key=' + apiKey;
+        var collectionUrl2 = 'https://api.zotero.org/users/9668586/collections/N3NVZA75/items/top?v=3&key=' + apiKey;
+        var collectionUrl3 = 'https://api.zotero.org/users/9668586/collections/ZX4H5G27/items/top?v=3&key=' + apiKey;
+        var collectionUrl4 = 'https://api.zotero.org/users/9668586/collections/7FUX4CMB/items/top?v=3&key=' + apiKey;
+        var collectionUrl5 = 'https://api.zotero.org/users/9668586/collections/2Z8DVDUV/items/top?v=3&key=' + apiKey;
+
+        fetchZoteroCollection(collectionUrl1, 'itemList1');
+        fetchZoteroCollection(collectionUrl2, 'itemList2');
+        fetchZoteroCollection(collectionUrl3, 'itemList3');
+        fetchZoteroCollection(collectionUrl4, 'itemList4');
+        fetchZoteroCollection(collectionUrl5, 'itemList5');
+     
+        document.addEventListener("DOMContentLoaded", function() {
+  const imageContainer1 = document.querySelector(".image-container1");
+  const imageContainer2 = document.querySelector(".image-container2");
+
+  imageContainer1.addEventListener("mouseover", function() {
+    this.classList.add("hovered");
+  });
+
+  imageContainer1.addEventListener("mouseout", function() {
+    this.classList.remove("hovered");
+  });
+
+  imageContainer2.addEventListener("mouseover", function() {
+    this.classList.add("hovered");
+  });
+
+  imageContainer2.addEventListener("mouseout", function() {
+    this.classList.remove("hovered");
+  });
+});
+
+  </script>
+</body>
+</html>

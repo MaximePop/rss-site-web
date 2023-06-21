@@ -1,0 +1,63 @@
+
+    <rss version="2.0">
+      <channel>
+        <title>Automatic RSS Feeds</title>
+        <link>https://example.com/rss</link>
+        <description>Automatically generated RSS feeds</description>
+        
+      <item>
+        <title>Soutenance sous la neige</title>
+        <link>https://versunjardin.hypotheses.org/1606</link>
+        <description>Il y a un peu plus d’un mois maintenant, j’ai soutenu ma thèse. C’était le 10 décembre 2021 à Mulhouse, sous une épaisse couverture de neige1. J’ai pris le temps de laisser reposer les sensations avant d’écrire, mais il me tient à cœur de garder une trace de cette étape dans mon carnet de thèse2 … Continuer la lecture de « Soutenance sous la neige »</description>
+        <pubDate>Mon, 05 Jun 2023 11:19:05 GMT</pubDate>
+        <category>Jardin de la poésie</category>
+      </item>
+    
+
+      <item>
+        <title>Sabotage : petite histoire de la destruction des moyens de production</title>
+        <link>https://maisouvaleweb.fr/sabotage-petite-histoire-de-la-destruction-des-moyens-de-production/</link>
+        <description>Retour sur le premier tome de premier tome de Histoire du sabotage (Éditions Libre, 2022), du philosophe Victor Cachard</description>
+        <pubDate>Mon, 05 Jun 2023 11:19:04 GMT</pubDate>
+        <category>Mais ou va le web?</category>
+      </item>
+    
+
+      <item>
+        <title>“L’auctorialité en partage”, séminaire doctoral de l’université Ca’Foscari (Venise, 19 avril 2023, org. Magda Campanini)</title>
+        <link>https://rouealivres.hypotheses.org/3176</link>
+        <description>Le séminaire doctoral qui s’est tenu à Venise le mercredi 19 avril, à l’initiative de Magda Campanini, professeure à l’université Ca’Foscari, a réuni pendant une journée les étudiants de master...</description>
+        <pubDate>Mon, 05 Jun 2023 11:19:05 GMT</pubDate>
+        <category>La roue à livres</category>
+      </item>
+    
+
+      <item>
+        <title>Flash Outil #13 – « Éditeur Atom pour la TEI »</title>
+        <link>https://olio.hypotheses.org/1051</link>
+        <description>ATOM – éditeur TEI – Mercredi 15 juin 2022 En deux mots : C’est un éditeur de texte libre, gratuit disponible sous Linux, Windows et Mac. Il est aussi utilisé comme un environnement de développement intégré (logiciel unique pour développer des programme informatique, faire les tests, etc.) Pourquoi utiliser un tel outil ? C’est une … Continuer la lecture de Flash Outil #13 – « Éditeur Atom pour la TEI » →</description>
+        <pubDate>Mon, 05 Jun 2023 11:19:04 GMT</pubDate>
+        <category>Olio</category>
+      </item>
+    
+
+      <item>
+        <title>2èmes rencontres Estrades / Eveille</title>
+        <link>https://estrades.hypotheses.org/460</link>
+        <description>12 et 13 septembre 2022 – Strasbourg Les rencontres Estrades-Eveille, inaugurées au printemps 2022, visent à examiner, étape par étape, les conditions réelles d’élaboration d’une chaîne éditoriale intégrale, sur le modèle de Métopes, à...</description>
+        <pubDate>Mon, 05 Jun 2023 11:19:04 GMT</pubDate>
+        <category>Estrades</category>
+      </item>
+    
+
+      <item>
+        <title>« Valoriser l’héritage culturel hors des murs des institutions : expérimenter le patrimoine vitré aubois » (mars 2023)</title>
+        <link>https://e-diffusion.uha.fr/video/5514-valoriser-lheritage-culturel-hors-des-murs-des-institutions-experimenter-le-patrimoine-vitre-aubois-mars-2023/</link>
+        <description>« Valoriser l’héritage culturel hors des murs des institutions : expérimenter le patrimoine vitré aubois » - Adrien Fallot Adrien Fallot est doctorant en informatique à l’université de Technologie de Troyes (LIST3N / Equipe Tech-CICO).  La documenta…  Ajouté par: Projet EVEille</description>
+        <pubDate>Mon, 05 Jun 2023 11:19:05 GMT</pubDate>
+        <category>Chaîne vidéo officielle</category>
+      </item>
+    
+      </channel>
+    </rss>
+  

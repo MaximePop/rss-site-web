@@ -1,0 +1,114 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #016633;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.letter-anim {
+  display: flex;
+  align-items: center;
+}
+
+.letter-anim span {
+  cursor: pointer;
+  position: relative;
+  font-size: 250px;
+  perspective: 550px;
+}
+
+.letter-anim span::before,
+.letter-anim span::after {
+  position: absolute;
+  content: attr(data-letter);
+  inset: 0;
+  transform-origin: left;
+}
+
+.letter-anim span::before {
+  transition: transform 0.4s ease-out;
+  color: rgba(0, 0, 0, 0.122);
+}
+
+.letter-anim span::after {
+  color: #f1f1f1;
+  transition: transform 0.4s ease-out, color 0.4s ease-out;
+  transform: rotateY(-30deg);
+}
+
+.letter-anim:hover span::after {
+  transform: rotateY(-40deg);
+}
+
+.letter-anim:hover span::before {
+  transform: scaleX(0.85) skewY(20deg);
+}
+
+.letter-anim:nth-child(1):hover span::after,
+.letter-anim:nth-child(1):hover span::before {
+  color: #016633;
+}
+
+.letter-anim:nth-child(2):hover span::after,
+.letter-anim:nth-child(2):hover span::before {
+  color: #0C704B;
+}
+
+.letter-anim:nth-child(3):hover span::after,
+.letter-anim:nth-child(3):hover span::before {
+  color: #197964;
+}
+
+.letter-anim:nth-child(4):hover span::after,
+.letter-anim:nth-child(4):hover span::before {
+  color: #25937C;
+}
+
+.letter-anim:nth-child(5):hover span::after,
+.letter-anim:nth-child(5):hover span::before {
+  color: #32A795;
+}
+
+.letter-anim:nth-child(6):hover span::after,
+.letter-anim:nth-child(6):hover span::before {
+  color: #3EBBAD;
+}
+
+.letter-anim:nth-child(7):hover span::after,
+.letter-anim:nth-child(7):hover span::before {
+  color: #063D5D;
+}
+
+.letter-anim:nth-child(7) span[data-letter="L"]:hover::after,
+.letter-anim:nth-child(7) span[data-letter="L"]:hover::before,
+.letter-anim:nth-child(7) span[data-letter="E"]:hover::after,
+.letter-anim:nth-child(7) span[data-letter="E"]:hover::before {
+  color: #063D5D;
+}
+
+.letter-anim:nth-child(7) span[data-letter="L"] + div.letter-anim:hover::after,
+.letter-anim:nth-child(7) span[data-letter="L"] + div.letter-anim:hover::before {
+  color: #063D5D
+}
+
+.container3 .section ul#itemList1 {
+  color: white;
+}

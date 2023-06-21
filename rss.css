@@ -1,0 +1,23 @@
+#rss-feed {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.item {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.link {
+  color: #0000FF;
+  text-decoration: none;
+}
+
+.description {
+  margin-top: 5px;
+  font-size: 14px;
+}
